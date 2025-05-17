@@ -19,7 +19,13 @@ const getFullText = (date: string) => {
     dateInThisYear = dayjs(date, "DD.MM.YYYY").set("year", 2026);
   }
 
-  return `через ${dateInThisYear.diff(dayjs(), "day")} днів ${dateFormatted}`;
+  const diffDays = dateInThisYear.diff(dayjs(), "day");
+
+  if (diffDays) {
+    return `через ${diffDays} днів ${dateFormatted}`;
+  }
+
+  return `День народження сьогодні - святкуємо 🎉`;
 };
 
 export default function FolderList() {
