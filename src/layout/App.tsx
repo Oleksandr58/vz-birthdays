@@ -19,13 +19,31 @@ const getFullText = (date: string) => {
     dateInThisYear = dayjs(date, "DD.MM.YYYY").set("year", 2026);
   }
 
+  const isTheBirthday = dateInDayjs.format("DD.MM") === dayjs().format("DD.MM");
+
+  if (isTheBirthday) {
+    return `День народження сьогодні - святкуємо 🎉`;
+  }
+
   const diffDays = dateInThisYear.diff(dayjs(), "day");
 
   if (diffDays) {
     return `через ${diffDays} днів ${dateFormatted}`;
   }
 
-  return `День народження сьогодні - святкуємо 🎉`;
+  return `День народження завтра - готуємося 🎉`;
+};
+const getYearText = (birhObj: { name: string; date: string }) => {
+  const fullYear = getFullYears(birhObj.date);
+  const isTheBirthday =
+    dayjs(birhObj.date, "DD.MM.YYYY").format("DD.MM") ===
+    dayjs().format("DD.MM");
+
+  if (isTheBirthday) {
+    return `${birhObj.name} (${fullYear} рочки)`;
+  }
+
+  return `${birhObj.name} (буде ${fullYear + 1} рочок)`;
 };
 
 export default function FolderList() {
@@ -67,7 +85,7 @@ export default function FolderList() {
               <Avatar src={birhObj.url} />
             </ListItemAvatar>
             <ListItemText
-              primary={`${birhObj.name} (буде ${getFullYears(birhObj.date) + 1} рочок)`}
+              primary={getYearText(birhObj)}
               secondary={getFullText(birhObj.date)}
             />
           </ListItem>
