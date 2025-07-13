@@ -7,6 +7,11 @@ const BIRTHDAYS = [
     url: "mazda.jpg",
   },
   {
+    name: "Марічка",
+    date: "19.10.1970",
+    url: "marichka.jpg",
+  },
+  {
     name: "Доцент",
     date: "06.02.1973",
     url: "docent.jpg",
