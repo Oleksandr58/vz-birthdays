@@ -32,11 +32,6 @@ const BIRTHDAYS = [
     url: "suhii.jpg",
   },
   {
-    name: "Позитив",
-    date: "21.12.1965",
-    url: "pozitiv.jpg",
-  },
-  {
     name: "Барні",
     date: "09.02.1996",
     url: "barni.jpg",
@@ -93,7 +88,10 @@ const today = dayjs();
 const getNextBirthday = (dateStr: string) => {
   const [day, month] = dateStr.split(".").map(Number);
   let birthdayThisYear = dayjs(
-    `${today.year()}-${String(month).padStart(2, "0")}-${String(day).padStart(2, "0")}`
+    `${today.year()}-${String(month).padStart(2, "0")}-${String(day).padStart(
+      2,
+      "0"
+    )}`
   );
 
   if (birthdayThisYear.isBefore(today, "day")) {
