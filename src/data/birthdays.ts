@@ -1,10 +1,20 @@
 import dayjs from "dayjs";
 
 const BIRTHDAYS = [
+  // {
+  //   name: "Мазда",
+  //   date: "07.10.1969",
+  //   url: "mazda.jpg",
+  // },
   {
-    name: "Мазда",
-    date: "07.10.1969",
-    url: "mazda.jpg",
+    name: "Чечен",
+    date: "22.11.1985",
+    url: "",
+  },
+  {
+    name: "Пріма",
+    date: "01.08.1978",
+    url: "",
   },
   {
     name: "Марічка",
@@ -90,8 +100,8 @@ const getNextBirthday = (dateStr: string) => {
   let birthdayThisYear = dayjs(
     `${today.year()}-${String(month).padStart(2, "0")}-${String(day).padStart(
       2,
-      "0"
-    )}`
+      "0",
+    )}`,
   );
 
   if (birthdayThisYear.isBefore(today, "day")) {

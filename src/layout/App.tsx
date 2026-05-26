@@ -12,11 +12,11 @@ const getFullYears = (date: string) =>
 const getFullText = (date: string) => {
   const dateInDayjs = dayjs(date, "DD.MM.YYYY");
   const dateFormatted = dateInDayjs.format("(DD MMMM YYYY)");
-  let dateInThisYear = dayjs(date, "DD.MM.YYYY").set("year", 2025);
+  let dateInThisYear = dayjs(date, "DD.MM.YYYY").set("year", dayjs().year());
   const isPassedThisYear = dayjs().isAfter(dateInThisYear);
 
   if (isPassedThisYear) {
-    dateInThisYear = dayjs(date, "DD.MM.YYYY").set("year", 2026);
+    dateInThisYear = dayjs(date, "DD.MM.YYYY").set("year", dayjs().year() + 1);
   }
 
   const isTheBirthday = dateInDayjs.format("DD.MM") === dayjs().format("DD.MM");
@@ -82,7 +82,7 @@ export default function FolderList() {
             }}
           >
             <ListItemAvatar>
-              <Avatar src={birhObj.url} />
+              <Avatar src={birhObj.url || "watermark.png"} />
             </ListItemAvatar>
             <ListItemText
               primary={getYearText(birhObj)}
