@@ -16,11 +16,11 @@ const BIRTHDAYS = [
     date: "01.08.1978",
     url: "",
   },
-  {
-    name: "Марічка",
-    date: "19.10.1970",
-    url: "marichka.jpg",
-  },
+  // {
+  //   name: "Марічка",
+  //   date: "19.10.1970",
+  //   url: "marichka.jpg",
+  // },
   {
     name: "Доцент",
     date: "06.02.1973",
