@@ -1,11 +1,16 @@
 import dayjs from "dayjs";
 
 const BIRTHDAYS = [
-  // {
-  //   name: "Мазда",
-  //   date: "07.10.1969",
-  //   url: "mazda.jpg",
-  // },
+  {
+    name: "Ципа",
+    date: "20.04.2000",
+    url: "",
+  },
+  {
+    name: "Фаза",
+    date: "05.08.1995",
+    url: "",
+  },
   {
     name: "Чечен",
     date: "22.11.1985",
@@ -16,11 +21,6 @@ const BIRTHDAYS = [
     date: "01.08.1978",
     url: "",
   },
-  // {
-  //   name: "Марічка",
-  //   date: "19.10.1970",
-  //   url: "marichka.jpg",
-  // },
   {
     name: "Доцент",
     date: "06.02.1973",
